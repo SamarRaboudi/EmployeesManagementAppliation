@@ -1,0 +1,83 @@
+.header{
+    display: flex; 
+    align-items: baseline; 
+    justify-content: space-between ; 
+    margin: 0 0 20px;
+}
+
+.addButton{
+    padding: 25px 15px;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+  
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: #e5eaef;
+}
+  
+.demo-row-is-clicked {
+font-weight: bold;
+}
+
+.column-title{
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.column-content{
+    justify-content: space-around;
+}
+
+.icon-btn{
+    font-size: 16px;
+}
+
+.icon-view-btn{
+font-size: 20px;
+}
+
+.custom-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-tooltip .tooltip-text {
+  visibility: hidden;
+  font-size: 10px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 1px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: calc(100% - 10px); 
+  left: 50%; 
+  transform: translateX(-50%); 
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.custom-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.pagination{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .column-title , .column-content, .addButton{
+        font-size: 10px;
+    }
+
+    .column-content{
+        justify-content: center;
+    }
+  }

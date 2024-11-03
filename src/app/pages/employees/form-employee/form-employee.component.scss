@@ -1,0 +1,33 @@
+@import '../../../../assets/scss/_variables.scss';
+
+.custom-input {
+  padding: 15px 7px;
+  border: 1px solid $borderformColor;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.invalid .input-wrapper {
+  border-color: $error;
+}
+
+.invalid .custom-input {
+  border-color: $error;
+}
+
+.invalid .error-message {
+  color: $error;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+input:focus { 
+  outline: none !important;
+  border-color: $primary;
+}
+
+.dialog-actions{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}

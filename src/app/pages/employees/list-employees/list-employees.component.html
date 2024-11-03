@@ -1,0 +1,76 @@
+<div class="listing-container">
+    <div class="header">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+      </mat-form-field>
+      <button class="addButton" mat-raised-button color="primary" (click)="openFormDialog('Add')">Add Employee</button>
+    </div>
+    <mat-table [dataSource]="dataSource" matSort class="demo-table">
+
+      <!-- Employee ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="column-title">ID</mat-header-cell>
+        <mat-cell *matCellDef="let employee" class="column-content">{{ employee.id }}</mat-cell>
+      </ng-container>
+    
+      <!-- Employee Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="column-title">Name</mat-header-cell>
+        <mat-cell *matCellDef="let employee" class="column-content">{{ employee.name }}</mat-cell>
+      </ng-container>
+    
+      <!-- Employee Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="column-title">Position</mat-header-cell>
+        <mat-cell *matCellDef="let employee" class="column-content">{{ employee.position }}</mat-cell>
+      </ng-container>
+    
+       <!-- Employee Departement Column -->
+       <ng-container matColumnDef="departement">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="column-title">Departement</mat-header-cell>
+        <mat-cell *matCellDef="let employee" class="column-content">{{ employee.departement }}</mat-cell>
+      </ng-container>
+    
+       <!-- Employee Salary Column -->
+       <ng-container matColumnDef="salary">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="column-title">Salary</mat-header-cell>
+        <mat-cell *matCellDef="let employee" class="column-content">{{ employee.salary }} DT</mat-cell>
+      </ng-container>
+    
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="column-title">Actions</mat-header-cell>
+        <mat-cell *matCellDef="let employee" class="column-content">
+          <div class="custom-tooltip">
+            <button mat-icon-button color="accent"   (click)="openFormDialog('Edit', employee)">
+                <mat-icon class="icon-btn"><i-tabler name="edit" class="icon-18 d-flex"></i-tabler></mat-icon>
+            </button>
+            <span class="tooltip-text">Edit</span>
+          </div>
+          <div class="custom-tooltip">
+            <button mat-icon-button color="warn"   (click)="deleteEmployee(employee)"    >
+              <mat-icon class="icon-btn"><i-tabler name="square-x" class="icon-18 d-flex"></i-tabler></mat-icon>
+            </button>
+            <span class="tooltip-text">Delete</span>
+          </div>
+        </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns" class="row"></mat-row>
+    
+      <ng-container matColumnDef="noRecord">
+        <td mat-footer-cell *matFooterCellDef>No employees found.</td>
+      </ng-container>
+    
+      <ng-template [ngIf]="dataSource.data.length === 0">
+        <tr mat-footer-row *matFooterRowDef="['noRecord']"></tr>
+      </ng-template>
+    
+    </mat-table>
+    
+    <!-- Paginator -->
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons [pageSize]="10" [length]="this.employees.length" class="pagination"></mat-paginator>
+    <p-toast></p-toast>
+  </div>
