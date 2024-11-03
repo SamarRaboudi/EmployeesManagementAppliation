@@ -31,7 +31,7 @@ export interface Employee {
 
 Before running the application, make sure you have the following installed:
 
-- Node.js (version 12 or higher)
+- Node.js (version 14.20.0 or higher, up to version 18.x)
 - Angular CLI (installed globally)
 
 ## Getting Started
@@ -83,4 +83,4 @@ Open your web browser and navigate to [http://localhost:4200/](http://localhost:
    - Click the "Delete" button next to an employee's name. 
    - Click "Confirm" to remove the employee from the list.
 
-## Provided with ❤️ by Sama Raboudi
+## Coded with ❤️ by Sama Raboudi
