@@ -42,6 +42,11 @@ To set up this project locally, follow these steps:
 
 ```bash
    git clone https://github.com/SamarRaboudi/EmployeesManagementAppliation.git
+```
+
+1. **Navigate to the project directory:**
+
+```bash
    cd EmployeesManagementAppliation
 ```
 
